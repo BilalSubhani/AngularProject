@@ -3,6 +3,10 @@
 @hero-text-color: white;
 @heading-font: 'Roboto', sans-serif;
 @body-font: 'Open Sans', sans-serif;
+@navbar-bg: #afbadc;
+@navbar-hover-color: #7091E6;
+@footer-bg: #8697C4;
+@footer-text-color: black;
 
 body {
   font-family: @body-font;
@@ -16,16 +20,16 @@ body {
 
 .hero-section {
   position: relative;
-  background: @hero-bg;
-  background-size: cover;
-  background-position: center;
   width: 1600px;
   height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: @hero-text-color;
   text-align: center;
+  color: @hero-text-color;
+  background: @hero-bg;
+  background-size: cover;
+  background-position: center;
 
   &::before {
     content: '';
@@ -43,22 +47,22 @@ body {
     z-index: 2;
     padding: 20px;
     color: @hero-text-color;
-  }
 
-  .hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-family: @heading-font;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-family: @heading-font;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-  .hero-content p {
-    font-size: 20px;
-    font-weight: 300;
-    max-width: 800px;
-    margin: 0 auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    p {
+      font-size: 20px;
+      font-weight: 300;
+      max-width: 800px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
@@ -68,37 +72,37 @@ body {
   align-items: center;
   margin: 0;
   padding: 10px 20px;
-  background-color: #afbadc;
   position: sticky;
   top: 0;
   z-index: 1000;
-}
+  background-color: @navbar-bg;
 
-.navbar li {
-  margin: 0 20px;
-}
+  li {
+    margin: 0 20px;
+  }
 
-.navbar .logo {
-  margin-right: auto;
-}
+  .logo {
+    margin-right: auto;
+  }
 
-.navbar a {
-  color: black;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 
-.navbar a:hover {
-  color: #7091E6; 
-}
+    &:hover {
+      color: @navbar-hover-color;
+    }
+  }
 
-.navbar h1 {
-  font-size: 22px;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  color: black;
+  h1 {
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: black;
+  }
 }
 
 .slider-container {
@@ -123,41 +127,41 @@ input[type="radio"] {
 .slides {
   position: relative;
   overflow: hidden;
-}
 
-.inner {
-  display: flex;
-  transition: margin-left 1s ease;
-}
+  .inner {
+    display: flex;
+    transition: margin-left 1s ease;
 
-.frame {
-  width: 100%;
-  height: 400px;
-}
+    .frame {
+      width: 100%;
+      height: 400px;
 
-.frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 .bullets {
   margin-top: 10px;
   text-align: center;
-}
 
-.bullets label {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ccc;
-  margin: 0 5px;
-  cursor: pointer;
-}
+  label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
 
-.bullets label:hover {
-  background: #afbadc;
+    &:hover {
+      background: @navbar-bg;
+    }
+  }
 }
 
 input:checked ~ .slides .inner {
@@ -181,8 +185,8 @@ input#frame4:checked ~ .slides .inner {
 }
 
 footer {
-  background-color: #8697C4;
-  color: black;
+  background-color: @footer-bg;
+  color: @footer-text-color;
   text-align: center;
   padding: 10px;
 }
